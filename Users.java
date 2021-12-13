@@ -1,25 +1,23 @@
-package com.company;
+package com.company.baza;
 
 public class Users {
 
-        private int id;
+      //  private int id;
         private String name;
         private String login;
         private String password;
 
 
 
-    public Users(int id, String name, String loggin, String password) {
-            this.id = id;
+    public Users(String name, String loggin, String password) {
+           // this.id = id;
             this.name = name;
             this.login = loggin;
             this.password = password;
         }
         public String getPassword() {return password; }
 
-        public int getId() {
-            return id;
-        }
+        //public int getId() {return id; }
 
         public String getName() {
             return name;
@@ -29,9 +27,7 @@ public class Users {
             return login;
         }
 
-        public void setId(int id) {
-            this.id = id;
-        }
+        //public void setId(int id) {            this.id = id;        }
 
         public void setName(String name) {
             this.name = name;
@@ -48,7 +44,7 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" +
-                "id=" + id +
+           //     "id=" + id +
                 ", name='" + name + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
