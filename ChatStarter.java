@@ -17,6 +17,7 @@ public class ChatStarter {
     public ChatStarter() {
 
         communication = new ClientCommunication();
+        LogsFiles logsFiles = new LogsFiles();
 
         Consumer <String> outboxMessageConsumer = communication::sendMessage;
 
@@ -26,6 +27,9 @@ public class ChatStarter {
                while (true) {
                    String inboxMessage = communication.receiveMessage();
                    frame.getInboundMessageConsumer().accept(inboxMessage);
+
+                   logsFiles.setFile(communication.receiveMessage());
+
                }
            }).start();
 
